@@ -23,7 +23,7 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.0263824, 0.964844, 0.722897, 1 )
+albedo_color = Color( 0.9375, 0.0183105, 0.147572, 1 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -65,13 +65,77 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Walls" type="Spatial" index="0"]
+[node name="Gate" type="Spatial" index="0"]
 
-transform = Transform( 1.05, 0, 0, 0, 1.05, 0, 0, 0, 0.385875, 0, 0, 0 )
+transform = Transform( 0.721526, 0, 0, 0, 3.5, 0, 0, 0, 0.699358, 0, 3.30997, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.513508, 0, 0, 0, 0.882557, 0, 0, 0, 12.1482, 0, 0, 0.999998 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="MeshInstance2" type="MeshInstance" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77219, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="MeshInstance3" type="MeshInstance" parent="." index="2"]
+
+transform = Transform( 0.00378974, -4.87611, 0.00918719, -0.20603, -0.00324636, 0.0126128, -0.0208233, -0.032552, -1.11921, 3.93365, 0.795597, -0.12804 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -86,7 +150,7 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
+[node name="StaticBody" type="StaticBody" parent="MeshInstance3" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -97,7 +161,7 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false

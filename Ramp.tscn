@@ -23,7 +23,7 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.0263824, 0.964844, 0.722897, 1 )
+albedo_color = Color( 0.046814, 0.142524, 0.921875, 1 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -65,13 +65,11 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Walls" type="Spatial" index="0"]
-
-transform = Transform( 1.05, 0, 0, 0, 1.05, 0, 0, 0, 0.385875, 0, 0, 0 )
+[node name="Ramp" type="Spatial" index="0"]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.513508, 0, 0, 0, 0.882557, 0, 0, 0, 12.1482, 0, 0, 0.999998 )
+transform = Transform( 4.81154, 0, 0, 0, 0.159103, 0, 0, 0, 1.0707, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -84,7 +82,6 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
 
