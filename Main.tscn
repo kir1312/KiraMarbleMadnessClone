@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://1st platform.tscn" type="PackedScene" id=2]
@@ -9,11 +9,10 @@
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=7]
 [ext_resource path="res://mini platforms.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Ramp.tscn" type="PackedScene" id=9]
-[ext_resource path="res://2nd Platform.tscn" type="PackedScene" id=10]
-[ext_resource path="res://2nd Platform.gd" type="Script" id=11]
-[ext_resource path="res://Walls two.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Last Platform.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Gate.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Walls two.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Last Platform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Gate.tscn" type="PackedScene" id=12]
+[ext_resource path="res://2ndPlatform.tscn" type="PackedScene" id=13]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -30,7 +29,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.7705 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.6543, 25.5775, 20.496 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2416, 25.226, 21.5128 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
@@ -125,51 +124,46 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( -3.7533e-008, -2.24043e-008, 1, 0.448053, 0.894006, 3.68464e-008, -0.894006, 0.448053, -2.35165e-008, -48.4164, 17.5026, -55.8889 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="2nd Platform" parent="." index="15" instance=ExtResource( 10 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6309, 12.299, 21.2095 )
-script = ExtResource( 11 )
-
-[node name="mini platforms6" parent="." index="16" instance=ExtResource( 8 )]
+[node name="mini platforms6" parent="." index="15" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 3, -46.93, 14.5171, 10.5407 )
 
-[node name="mini platforms7" parent="." index="17" instance=ExtResource( 8 )]
+[node name="mini platforms7" parent="." index="16" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 3, -41.9023, 14.9361, 2.79486 )
 
-[node name="mini platforms8" parent="." index="18" instance=ExtResource( 8 )]
+[node name="mini platforms8" parent="." index="17" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 3, -46.7777, 15.0929, -4.87136 )
 
-[node name="mini platforms9" parent="." index="19" instance=ExtResource( 8 )]
+[node name="mini platforms9" parent="." index="18" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 3, -42.3515, 15.464, -13.4523 )
 
-[node name="mini platforms10" parent="." index="20" instance=ExtResource( 8 )]
+[node name="mini platforms10" parent="." index="19" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 3, -46.6179, 15.4737, -21.8325 )
 
-[node name="Walls two" parent="." index="21" instance=ExtResource( 12 )]
+[node name="Walls two" parent="." index="20" instance=ExtResource( 10 )]
 
 transform = Transform( -3.46126e-008, 0, 8.15563, 0, 26.8206, 0, -1.58808, 0, -7.14965e-007, -48.7085, -10.8219, -36.0411 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Walls two2" parent="." index="22" instance=ExtResource( 12 )]
+[node name="Walls two2" parent="." index="21" instance=ExtResource( 10 )]
 
 transform = Transform( -3.46126e-008, 0, 8.15563, 0, 26.8206, 0, -1.58808, 0, -7.14965e-007, -48.7085, -10.8219, -44.5056 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Walls two3" parent="." index="23" instance=ExtResource( 12 )]
+[node name="Walls two3" parent="." index="22" instance=ExtResource( 10 )]
 
 transform = Transform( -3.46126e-008, 0, 8.15563, 0, 26.8206, 0, -1.58808, 0, -7.14965e-007, -48.7085, -10.8219, -52.3862 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Last Platform" parent="." index="24" instance=ExtResource( 13 )]
+[node name="Last Platform" parent="." index="23" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9604, 19.2751, -69.4573 )
 
-[node name="Gate" parent="Last Platform" index="1" instance=ExtResource( 14 )]
+[node name="Gate" parent="Last Platform" index="1" instance=ExtResource( 12 )]
 
 transform = Transform( 0.721526, 0, 0, 0, 3.5, 0, 0, 0, 0.699358, -2.9137, 4.06629, -9.20272 )
 
@@ -202,5 +196,9 @@ reverb_bus_uniformity = 0.0
 transform = Transform( 0.532352, 0, 0, 0, 0.428383, 0, 0, 0, 0.733357, -0.0153379, -0.0185949, 3.08143 )
 shape = SubResource( 1 )
 disabled = false
+
+[node name="2ndPlatform" parent="." index="24" instance=ExtResource( 13 )]
+
+transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -45.246, 13.0055, 21.0923 )
 
 

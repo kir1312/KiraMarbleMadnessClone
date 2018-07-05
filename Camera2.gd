@@ -5,13 +5,16 @@ extends Camera
 # var b = "textvar"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	
+	#if Camera = (-45.6309, 12.299, 21.209499):
+		#set to current
+		
 	add_to_group("cameras")
 	add_to_group("cameraBs")
 	pass
 
-#func _process(delta):
+func _process(delta):
+	#make_current(-45.6309, 12.299, 21.209499)
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-#	pass
+	pass

@@ -9,9 +9,11 @@ func _ready():
 	# Initialization here
 	add_to_group("cameras")
 	add_to_group("cameraAs")
-	pass
 
-#func _process(delta):
+func _process(delta):
+	#make_current()
+	#clear_current(-45.6309, 12.299, 21.209499)
+	pass
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
