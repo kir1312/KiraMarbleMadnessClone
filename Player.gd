@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var speed = 200
+var speed = 400
 var direction = Vector3()
 var gravity = -9.8
 var velocity = Vector3()
@@ -15,13 +15,13 @@ func _ready():
 func _physics_process(delta):
 	direction = Vector3(0, 0, 0)
 	if ($Camera.current):
-		if Input. is_action_pressed('ui_left'):
-			direction.x -= 1
-		if Input. is_action_pressed('ui_right'):
-			direction.x += 1
 		if Input. is_action_pressed('ui_up'):
-			direction.z -= 1
+			direction.x -= 1
 		if Input. is_action_pressed('ui_down'):
+			direction.x += 1
+		if Input. is_action_pressed('ui_right'):
+			direction.z -= 1
+		if Input. is_action_pressed('ui_left'):
 			direction.z += 1
 	
 	if ($Camera2.current):
@@ -48,7 +48,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	
 	#print("translaton.y:", translation.y)
-	if (translation.y < -300):
+	if (translation.y < -100):
 		print ("you dead ha ha")
 		get_tree().change_scene("res://Main.tscn")
 		

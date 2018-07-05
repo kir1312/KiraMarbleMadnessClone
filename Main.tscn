@@ -29,13 +29,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.7705 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2416, 25.226, 21.5128 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07132, 25.226, 25.1072 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera" parent="Player" index="2"]
 
-transform = Transform( -0.00592183, -0.222137, 0.974997, 0.00172322, 0.975011, 0.222151, -0.999981, 0.00299568, -0.00539105, 33.6478, 0.944101, -1.45255 )
+transform = Transform( -0.00592183, -0.222137, 0.974997, 0.00172322, 0.975011, 0.222151, -0.999981, 0.00299568, -0.00539105, 21.2415, -12.11, -1.75157 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -169,7 +169,7 @@ transform = Transform( 0.721526, 0, 0, 0, 3.5, 0, 0, 0, 0.699358, -2.9137, 4.066
 
 [node name="Area" type="Area" parent="Last Platform" index="2"]
 
-transform = Transform( 14.8006, 0, 0, 0, 16.2274, 0, 0, 0, 1, 0.161255, 3.05522, -13.1505 )
+transform = Transform( 9.38377, 0, 0, 0, 11.6217, 0, 0, 0, 1.27399, -0.846466, 2.17945, -14.6768 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -193,7 +193,7 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Last Platform/Area" index="0"]
 
-transform = Transform( 0.532352, 0, 0, 0, 0.428383, 0, 0, 0, 0.733357, -0.0153379, -0.0185949, 3.08143 )
+transform = Transform( 0.532352, 0, 0, 0, 0.428383, 0, 0, 0, 0.733357, 0.0124907, -0.0185949, 3.08142 )
 shape = SubResource( 1 )
 disabled = false
 
