@@ -35,7 +35,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.7705 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2311, 36.3623, -85.0764 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40676, 28.3744, 25.6072 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
