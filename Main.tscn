@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://1st platform.tscn" type="PackedScene" id=2]
@@ -11,8 +11,12 @@
 [ext_resource path="res://Ramp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Walls two.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Last Platform.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Gate.tscn" type="PackedScene" id=12]
-[ext_resource path="res://2ndPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Last Platform.gd" type="Script" id=12]
+[ext_resource path="res://Gate.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Gate.gd" type="Script" id=14]
+[ext_resource path="res://Winner Platform.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Winner Platform.gd" type="Script" id=16]
+[ext_resource path="res://2ndPlatform.tscn" type="PackedScene" id=17]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -20,6 +24,7 @@ extents = Vector3( 1, 1, 1 )
 
 [node name="Main" type="Spatial" index="0"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0253, 0, 26.3084 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -29,7 +34,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.7705 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07132, 25.226, 25.1072 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2311, 18.6817, -85.0764 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
@@ -43,7 +48,7 @@ h_offset = 0.0
 v_offset = 20.0
 doppler_tracking = 0
 projection = 0
-current = true
+current = false
 fov = 70.0
 size = 1.0
 near = 0.05
@@ -162,14 +167,22 @@ _sections_unfolded = [ "Transform" ]
 [node name="Last Platform" parent="." index="23" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9604, 19.2751, -69.4573 )
+script = ExtResource( 12 )
 
-[node name="Gate" parent="Last Platform" index="1" instance=ExtResource( 12 )]
+[node name="Gate" parent="Last Platform" index="1" instance=ExtResource( 13 )]
 
 transform = Transform( 0.721526, 0, 0, 0, 3.5, 0, 0, 0, 0.699358, -2.9137, 4.06629, -9.20272 )
+script = ExtResource( 14 )
+
+[node name="Winner Platform" parent="Last Platform/Gate" index="3" instance=ExtResource( 15 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.15785, -2.85715, -8.57929 )
+script = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="Last Platform" index="2"]
 
-transform = Transform( 9.38377, 0, 0, 0, 11.6217, 0, 0, 0, 1.27399, -0.846466, 2.17945, -14.6768 )
+transform = Transform( 5.77229, 0, 0, 0, 8.16765, 0, 0, 0, 1.27399, -0.0133972, 2.81572, -11.966 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -193,12 +206,50 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Last Platform/Area" index="0"]
 
-transform = Transform( 0.532352, 0, 0, 0, 0.428383, 0, 0, 0, 0.733357, 0.0124907, -0.0185949, 3.08142 )
+transform = Transform( 0.532352, 0, 0, 0, 0.428383, 0, 0, 0, 0.733357, 0.014617, 0.0338423, 2.37703 )
 shape = SubResource( 1 )
 disabled = false
 
-[node name="2ndPlatform" parent="." index="24" instance=ExtResource( 13 )]
+[node name="2ndPlatform" parent="." index="24" instance=ExtResource( 17 )]
 
 transform = Transform( 5, 0, 0, 0, 0.2, 0, 0, 0, 5, -45.246, 13.0055, 21.0923 )
+
+[node name="Panel" type="Panel" parent="." index="25"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 366.0
+margin_top = 251.0
+margin_right = 657.0
+margin_bottom = 369.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 95.0
+margin_top = 54.0
+margin_right = 192.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Yay! You Win! :)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

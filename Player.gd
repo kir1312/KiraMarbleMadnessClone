@@ -45,6 +45,22 @@ func _physics_process(delta):
 	if is_on_floor() and Input. is_key_pressed(KEY_SPACE):
 		velocity.y = 10
 	
+	var slideCount = get_slide_count()
+	#if (slideCount > 0):
+	#print("slideCount",slideCount)
+		
+	for i in slideCount:
+		print("i:",i)
+		var kc = get_slide_collision(i)
+		var c = kc.collider
+		var rid = kc.collider_id
+		print("class:",c.get_class(),"rid:",rid)
+		var ml = c.get_meta_list()
+		for m in ml:
+			print("m:")
+		if (c.is_in_group("wp")):
+			print('winner hit')
+	
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	
 	#print("translaton.y:", translation.y)
