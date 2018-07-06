@@ -10,6 +10,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	add_to_group("players")
+	$Panel.hide()
 	pass
 
 func _physics_process(delta):
@@ -75,3 +76,8 @@ func _physics_process(delta):
 	
 	
 	
+
+func _on_Area_body_entered(body):
+	print("landed on finish")
+	$Panel.show()
+	pass # replace with function body

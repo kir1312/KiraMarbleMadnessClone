@@ -5,14 +5,8 @@ extends Spatial
 # var b = "textvar"
 
 func _ready():
-	$Panel.hide()
+	pass
 
 func _process(delta):
 	pass
 
-
-
-func _on_Area_body_entered( body ):
-	if body is KinematicBody:
-		print("win")
-		$Panel.show()
